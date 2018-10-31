@@ -1,5 +1,3 @@
-"use strict";
-
 const assert = require('assert');
 const thumbprint = require('../');
 
@@ -13,6 +11,6 @@ describe('thumbprint.calculate', function () {
   });
 
   it('should return the right thumbprint when passed a base64 buffer', function () {
-    assert.equal(thumbprint.calculate(new Buffer(cert, 'base64')), certThumbprint);
+    assert.equal(thumbprint.calculate(new Buffer.from(cert, 'base64')), certThumbprint);
   });
 });
